@@ -1,49 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <script src="https://cdn.jsdelivr.net/pyodide/v0.20.0/full/pyodide.js"></script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 </head>
+
 <body>
-    <textarea id="code" style="width: 100%;" rows="6" ></textarea>
-    <button type="button" onclick="evaluatePython()">submit!</button>
+    <p>
+        You can execute any Python code. Just enter something in the box below and
+        click the button.
+    </p>
+    <input id="code" value="sum([1, 2, 3, 4, 5])" />
+    <button onclick="evaluatePython()">Run</button>
+    <br />
+    <br />
+    <div>Output:</div>
     <textarea id="output" style="width: 100%;" rows="6" disabled></textarea>
+
     <script>
-        const output_box = document.getElementById("output")
-        const code = document.getElementById("code")
-        function add2Out(s) 
-        {
-            output_box.value+=`${s}\n`
+        const output = document.getElementById("output");
+        const code = document.getElementById("code");
+
+        function addToOutput(s) {
+            output.value += ">>>" + code.value + "\n" + s + "\n";
         }
 
-        async function main() 
-        {
-                let pyodide = await loadPyodide();
-                add2Out("Ready!")
-                return pyodide;
+        output.value = "Initializing...\n";
+        // init Pyodide
+        async function main() {
+            let pyodide = await loadPyodide();
+            output.value += "Ready!\n";
+            return pyodide;
         }
-
-    
         let pyodideReadyPromise = main();
-        async function evaluatePython() 
-        {
+
+        async function evaluatePython() {
             let pyodide = await pyodideReadyPromise;
-            try 
-            {
+            try {
                 let output = pyodide.runPython(code.value);
-                console.log(code.value)
-                console.log(output)
-                add2Out(output);
-            } 
-            catch (err)
-            {
-                add2Out(err);
+                addToOutput(output);
+            } catch (err) {
+                addToOutput(err);
             }
         }
-
     </script>
 </body>
+
 </html>
