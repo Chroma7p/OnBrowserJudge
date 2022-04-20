@@ -28,6 +28,7 @@
 
     
         let pyodideReadyPromise = main();
+        console.log(pyodide.runPython("print(1 + 2)"));
         async function evaluatePython() 
         {
             let pyodide = await pyodideReadyPromise;
