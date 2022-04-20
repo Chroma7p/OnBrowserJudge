@@ -28,13 +28,13 @@
 
     
         let pyodideReadyPromise = main();
-        console.log(pyodide.runPython("print(1 + 2)"));
         async function evaluatePython() 
         {
             let pyodide = await pyodideReadyPromise;
             try 
             {
                 let output = pyodide.runPython(code.value);
+                console.log(code.value)
                 console.log(output)
                 add2Out(output);
             } 
