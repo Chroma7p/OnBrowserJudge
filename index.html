@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <textarea id="code" style="width: 100%;" rows="6"></textarea>
+    <textarea id="code" style="width: 100%;" rows="6" ></textarea>
+    <button type="button" onclick="evaluatePython()">submit!</button>
     <textarea id="output" style="width: 100%;" rows="6" disabled></textarea>
     <script>
         const output = document.getElementById("output")
@@ -23,6 +24,8 @@
                 add2Out("Ready!")
                 return pyodide;
         }
+
+    
         let pyodideReadyPromise = main();
         async function evaluatePython() 
         {
