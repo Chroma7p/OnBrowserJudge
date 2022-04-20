@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id="code" style="width: 100%;" rows="6"></textarea>
+    <textarea id="output" style="width: 100%;" rows="6" disabled></textarea>
+    <script>
+        const output = document.getElementById("output")
+        const code = document.getElementById("code")
+        function add2Out(s) 
+        {
+            output.value+=`${s}\n`
+        }
+
+        async function main() 
+        {
+                let pyodide = await loadPyodide();
+                add2Out("Ready!")
+                return pyodide;
+        }
+        let pyodideReadyPromise = main();
+        async function evaluatePython() 
+        {
+            let pyodide = await pyodideReadyPromise;
+            try 
+            {
+                let output = pyodide.runPython(code.value);
+                addToOutput(output);
+            } 
+            catch (err)
+            {
+                addToOutput(err);
+            }
+        }
+
+    </script>
+</body>
+</html>
