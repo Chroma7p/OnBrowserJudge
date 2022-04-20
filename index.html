@@ -34,6 +34,7 @@
             try 
             {
                 let output = pyodide.runPython(code.value);
+                console.log(output)
                 add2Out(output);
             } 
             catch (err)
