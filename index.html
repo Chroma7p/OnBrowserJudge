@@ -253,8 +253,9 @@ with open("result.txt","w")as f:
             let pyodide = await pyodideReadyPromise;
             try {
                 pyodide.runPython(
-`with open("submission.py","r")as f:
+`with open("submission.py","w")as f:
     f.write("""`+code.value+`""")`);
+                pyodide.runPython(tester)
                 pyodide.runPython(`
 with open("result.txt","r")as f:
     res=0
