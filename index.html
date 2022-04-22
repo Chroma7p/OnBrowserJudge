@@ -195,7 +195,7 @@ for ans_file_num in range(50):
     sys.stdin=input_file
     sys.stdout=output_file
     with open(test_file_name,"r")as f:
-        exec(f.read())
+        exec(f.read().replace("\\","\\\\"))
     input_file.close()
     output_file.close()
     with open(f"./answer/{ans_file_num:04}_ans.txt","r")as f1:
@@ -248,7 +248,7 @@ with open("result.txt","w")as f:
             try {
                 pyodide.runPython(
 `with open("submission.py","w")as f:
-    f.write("""`+code.value+`""".replace("\\n","\\\\n"))`);
+    f.write("""`+code.value+`""")`);
                 console.log("submit")
                 pyodide.runPython(tester)
                 console.log("test")
