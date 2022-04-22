@@ -187,11 +187,7 @@ import sys
 from unittest import result
 os.makedirs("./answer",exist_ok=True)
 judge=[]
-try:
-    test_file_name=sys.argv[1]
-except IndexError:
-    print("テストを実行したいファイルを選択してください")
-for ans_file_num in range(10):
+test_file_name="submission.py"
     #入出力のポインタを取得
     input_file=open(f"./testcase/{ans_file_num:04}_in.txt","r")
     output_file=open(f"./answer/{ans_file_num:04}_ans.txt","w")
