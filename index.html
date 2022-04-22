@@ -60,7 +60,7 @@ class Cart:
     def CheckOut(self):
         ret=""
         for i,item in enumerate(self.items):
-            ret+=f"{i}:{item.GetIntroTxt()}*{item.count}\n"
+            ret+=f"{i}:{item.GetIntroTxt()}*{item.count}\\n"
         ret+=f"total:{self.GetSum()}yen"
         for item in self.items:
             item.count=0
@@ -71,7 +71,7 @@ class Cart:
             return "item list is empty"
         ret=""
         for i,item in enumerate(self.items):
-            ret+= f"{i}:{item.GetIntroTxt()}\n"
+            ret+= f"{i}:{item.GetIntroTxt()}\\n"
         return ret
 
     def Buy(self,cmd):
@@ -175,11 +175,11 @@ for SEED in range(50):
 
     with open(f"./testcase/{SEED:04}_in.txt","w")as f:
         for i in cmd:
-            f.write(i+["\n",""][i[-1]=="\n"])
+            f.write(i+["\\n",""][i[-1]=="\\n"])
 
     with open(f"./testcase/{SEED:04}_out.txt","w")as f:
         for i in ans:
-            f.write(i+["\n",""][i[-1]=="\n"])
+            f.write(i+["\\n",""][i[-1]=="\\n"])
 
 `
         const tester=`import os
