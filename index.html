@@ -246,9 +246,11 @@ with open("result.txt","w")as f:
         async function evaluatePython() {
             let pyodide = await pyodideReadyPromise;
             try {
+                console.log(code.value)
                 pyodide.runPython(
 `with open("submission.py","w")as f:
-    f.write("""`+code.value.replace("\n","\\n")+`""")`);
+    f.write("""`+code.value.replace("\n","\\\\n")+`""")`);
+                
                 console.log("submit")
                 pyodide.runPython(tester)
                 console.log("test")
