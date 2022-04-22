@@ -182,7 +182,7 @@ for SEED in range(50):
             f.write(i+["\\n",""][i[-1]=="\\n"])
 
 `
-        const tester=`import os
+        const tester=(code)=>`import os
 import sys
 from unittest import result
 os.makedirs("./answer",exist_ok=True)
@@ -194,8 +194,7 @@ for ans_file_num in range(50):
     output_file=open(f"./answer/{ans_file_num:04}_ans.txt","w")
     sys.stdin=input_file
     sys.stdout=output_file
-    with open(test_file_name,"r")as f:
-        exec(f.read())
+    exec(`+code+`)
     input_file.close()
     output_file.close()
     with open(f"./answer/{ans_file_num:04}_ans.txt","r")as f1:
@@ -246,13 +245,7 @@ with open("result.txt","w")as f:
         async function evaluatePython() {
             let pyodide = await pyodideReadyPromise;
             try {
-                console.log(code.value.replace("\\\\", "\\\\\\\\"))
-                pyodide.runPython(
-`with open("submission.py","w")as f:
-    f.write("""`+code.value.replace("\\\\","\\\\\\\\")+`""")`);
-                
-                console.log("submit")
-                pyodide.runPython(tester)
+                pyodide.runPython(tester(code.value))
                 console.log("test")
                 pyodide.runPython(`
 with open("result.txt","r")as f:
