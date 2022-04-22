@@ -248,7 +248,9 @@ with open("result.txt","w")as f:
                 pyodide.runPython(
 `with open("submission.py","w")as f:
     f.write("""`+code.value+`""")`);
+                console.log("submit")
                 pyodide.runPython(tester)
+                console.log("test")
                 pyodide.runPython(`
 with open("result.txt","r")as f:
     res=0
