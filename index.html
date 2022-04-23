@@ -17,7 +17,7 @@
         
         const testcasemaker=`import os
 import random
-t_flag=True
+
 class Item:
     def __init__(self,name,value):
         self.name=name
@@ -182,6 +182,7 @@ for SEED in range(50):
         for i in ans:
             f.write(i+["\\n",""][i[-1]=="\\n"])
 
+
 `
         const tester=(code)=>`import os
 import sys
@@ -237,7 +238,7 @@ print(res)
         async function main() {
             let pyodide = await loadPyodide();
             pyodide.runPython(testcasemaker)
-            console.log(pyodide.globals.get("t_flag"))
+            console.log(pyodide.globals.get("cmd"))
             output.value += "Ready!\n";
             return pyodide;
         }
