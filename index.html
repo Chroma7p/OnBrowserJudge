@@ -239,7 +239,7 @@ print(res)
             let pyodide = await loadPyodide();
             pyodide.runPython(testcasemaker)
             console.log(pyodide.globals.get("cmd"))
-            condole.log("Ready!")
+            console.log("Ready!")
             output.value += "Ready!\n";
             return pyodide;
         }
