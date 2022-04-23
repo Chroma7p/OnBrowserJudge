@@ -216,7 +216,8 @@ for ans_file_num in range(50):
             
      
 res=f"{res}/{case}:{["WA","AC"][judge.count("AC")==len(judge)]}"
-
+sys.stdout=sys.__stdout__
+print(res)
 
         
 `)
