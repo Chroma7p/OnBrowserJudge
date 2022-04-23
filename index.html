@@ -185,7 +185,6 @@ for SEED in range(50):
 `)
         const tester=(code)=>JSON.stringify(`import os
 import sys
-from unittest import result
 os.makedirs("./answer",exist_ok=True)
 judge=[]
 test_file_name="submission.py"
@@ -216,12 +215,9 @@ for ans_file_num in range(50):
                 judge.append("AC")
             
      
-with open("result.txt","w")as f:
-    f.writelines(judge)
-sys.stdout=sys.__stdout__
-wtih open("result.txt","r")as f:
-    f.read()
 
+
+"{res}/{case}:{["WA","AC"][judge.count("AC")==len(judge)]}"
         
 `)
 
@@ -248,17 +244,6 @@ wtih open("result.txt","r")as f:
             let pyodide = await pyodideReadyPromise;
             try {
                 let output =pyodide.runPython(tester(code.value))
-                console.log(output)
-                console.log("test")
-                pyodide.runPython(`
-with open("result.txt","r")as f:
-    res=0
-    case=0
-    for c in f.readlines():
-        if c[:-1]=="AC":
-            res+=1
-        case+=0`)
-                output=pyodide.runPython(`f"{res}/{case}:{["WA","AC"][res==case]}"`)
                 addToOutput(output);
             } catch (err) {
                 addToOutput(err);
