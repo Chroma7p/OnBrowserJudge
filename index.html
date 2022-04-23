@@ -235,7 +235,7 @@ print(res)
         async function main() {
             let pyodide = await loadPyodide();
             pyodide.runPython(testcasemaker)
-            pyodide.globals.get("t_flag")
+            console.log(pyodide.globals.get("t_flag"))
             output.value += "Ready!\n";
             return pyodide;
         }
