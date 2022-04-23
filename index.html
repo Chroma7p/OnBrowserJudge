@@ -194,7 +194,7 @@ for ans_file_num in range(50):
     output_file=open(f"./answer/{ans_file_num:04}_ans.txt","w")
     sys.stdin=input_file
     sys.stdout=output_file
-    exec("""`+code.replace("\\","\\\\")+`""")
+    exec("""`+code.replace("\n","\\n")+`""")
     input_file.close()
     output_file.close()
     with open(f"./answer/{ans_file_num:04}_ans.txt","r")as f1:
