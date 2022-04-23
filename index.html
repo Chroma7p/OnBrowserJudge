@@ -183,7 +183,7 @@ for SEED in range(50):
             f.write(i+["\\n",""][i[-1]=="\\n"])
 
 `)
-        const tester=(code)=>`import os
+        const tester=(code)=>JSON.stringify(`import os
 import sys
 os.makedirs("./answer",exist_ok=True)
 judge=[]
@@ -194,7 +194,7 @@ for ans_file_num in range(50):
     output_file=open(f"./answer/{ans_file_num:04}_ans.txt","w")
     sys.stdin=input_file
     sys.stdout=output_file
-    exec("""`+JSON.stringify(code)+`""")
+    exec("""`+code+`""")
     input_file.close()
     output_file.close()
     with open(f"./answer/{ans_file_num:04}_ans.txt","r")as f1:
@@ -220,7 +220,7 @@ sys.stdout=sys.__stdout__
 print(res)
 
 
-`
+`)
 
 
         const output = document.getElementById("output");
