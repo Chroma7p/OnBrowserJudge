@@ -218,7 +218,9 @@ for ans_file_num in range(50):
      
 with open("result.txt","w")as f:
     f.writelines(judge)
-
+sys.stdout=sys.__stdout__
+wtih open("result.txt","r")as f:
+    print(f.read())
 
         
 `)
