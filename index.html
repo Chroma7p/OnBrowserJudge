@@ -244,7 +244,9 @@ print(res)
         async function evaluatePython() {
             let pyodide = await pyodideReadyPromise;
             try {
+                console.log(tester(code.value))
                 pyodide.runPython(tester(code.value));
+                
                 
             } catch (err) {
                 addToOutput(err);
