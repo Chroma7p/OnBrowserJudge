@@ -183,7 +183,7 @@ for SEED in range(50):
             f.write(i+["\\n",""][i[-1]=="\\n"])
 
 `)
-        const tester=(code)=>JSON.stringify(`import os
+        const tester=(code)=>`import os
 import sys
 os.makedirs("./answer",exist_ok=True)
 judge=[]
@@ -219,8 +219,8 @@ res=f"{res}/{case}:{["WA","AC"][judge.count("AC")==len(judge)]}"
 sys.stdout=sys.__stdout__
 print(res)
 
-das()
-`)
+
+`
 
 
         const output = document.getElementById("output");
