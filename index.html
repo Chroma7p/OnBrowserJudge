@@ -251,9 +251,9 @@ print(res)
             } catch (err) {
                 addToOutput(err);
             }
-            console.log(pyodide.globals.res);
-            console.log(pyodide.globals.judge)
-            addToOutput(pyodide.globals.res);
+            console.log(pyodide.globals.get("res"));
+            console.log(pyodide.globals.get("judge"))
+            addToOutput(pyodide.globals.get("res"));
         }
     </script>
 </body>
