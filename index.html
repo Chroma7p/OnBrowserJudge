@@ -14,8 +14,8 @@
     <textarea id="output" style="width: 100%;" rows="6" disabled></textarea>
 
     <script>
-        var str = (s => s.raw)`support\testing`[0]
-        const testcasemaker=`import os
+        
+        const testcasemaker=JSON.stringify(`import os
 import random
 
 class Item:
@@ -182,8 +182,8 @@ for SEED in range(50):
         for i in ans:
             f.write(i+["\\n",""][i[-1]=="\\n"])
 
-`
-        const tester=(code)=>`import os
+`)
+        const tester=(code)=>JSON.stringify(`import os
 import sys
 from unittest import result
 os.makedirs("./answer",exist_ok=True)
@@ -195,7 +195,7 @@ for ans_file_num in range(50):
     output_file=open(f"./answer/{ans_file_num:04}_ans.txt","w")
     sys.stdin=input_file
     sys.stdout=output_file
-    exec("""`+code.replace.raw+`""")
+    exec("""`+JSON.stringify(code)+`""")
     input_file.close()
     output_file.close()
     with open(f"./answer/{ans_file_num:04}_ans.txt","r")as f1:
@@ -222,7 +222,7 @@ with open("result.txt","w")as f:
             
 
         
-`
+`)
 
 
         const output = document.getElementById("output");
