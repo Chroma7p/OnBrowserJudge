@@ -215,7 +215,9 @@ for ans_file_num in range(50):
                 judge.append("AC")
             
      
-res=f"{res}/{case}:{["WA","AC"][judge.count('AC')==len(judge)]}"
+res=f"{judge.count('AC')}/{len(judge)}:{['WA','AC'][judge.count('AC')==len(judge)]}"
+
+
 sys.stdout=sys.__stdout__
 print(res)
 
