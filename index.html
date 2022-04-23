@@ -215,9 +215,9 @@ for ans_file_num in range(50):
                 judge.append("AC")
             
      
+return_string=f"{res}/{case}:{["WA","AC"][judge.count("AC")==len(judge)]}"
 
 
-"{res}/{case}:{["WA","AC"][judge.count("AC")==len(judge)]}"
         
 `)
 
@@ -243,8 +243,9 @@ for ans_file_num in range(50):
         async function evaluatePython() {
             let pyodide = await pyodideReadyPromise;
             try {
-                let output =pyodide.runPython(tester(code.value))
-                addToOutput(output);
+                pyodide.runPython(tester(code.value))
+                
+                addToOutput(pyodide.globals.return_string);
             } catch (err) {
                 addToOutput(err);
             }
