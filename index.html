@@ -215,7 +215,7 @@ for ans_file_num in range(50):
                 judge.append("AC")
             
      
-return_string=f"{res}/{case}:{["WA","AC"][judge.count("AC")==len(judge)]}"
+res=f"{res}/{case}:{["WA","AC"][judge.count("AC")==len(judge)]}"
 
 
         
@@ -226,7 +226,7 @@ return_string=f"{res}/{case}:{["WA","AC"][judge.count("AC")==len(judge)]}"
         const code = document.getElementById("code");
 
         function addToOutput(s) {
-            output.value += + s + "\n";
+            output.value +=  s + "\n";
         }
 
         output.value = "Initializing...\n";
@@ -244,8 +244,8 @@ return_string=f"{res}/{case}:{["WA","AC"][judge.count("AC")==len(judge)]}"
             let pyodide = await pyodideReadyPromise;
             try {
                 pyodide.runPython(tester(code.value))
-                
-                addToOutput(pyodide.globals.return_string);
+                console.log(pyodide.globals.res)
+                addToOutput(pyodide.globals.res);
             } catch (err) {
                 addToOutput(err);
             }
