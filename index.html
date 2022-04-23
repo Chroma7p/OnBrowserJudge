@@ -244,12 +244,13 @@ print(res)
         async function evaluatePython() {
             let pyodide = await pyodideReadyPromise;
             try {
-                pyodide.runPython(tester(code.value))
-                console.log(pyodide.globals.res)
-                addToOutput(pyodide.globals.res);
+                pyodide.runPython(tester(code.value));
+                
             } catch (err) {
                 addToOutput(err);
             }
+            console.log(pyodide.globals.res);
+            addToOutput(pyodide.globals.res);
         }
     </script>
 </body>
