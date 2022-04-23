@@ -17,7 +17,7 @@
         
         const testcasemaker=JSON.stringify(`import os
 import random
-
+t_flag=True
 class Item:
     def __init__(self,name,value):
         self.name=name
@@ -235,7 +235,7 @@ print(res)
         async function main() {
             let pyodide = await loadPyodide();
             pyodide.runPython(testcasemaker)
-
+            pyodide.globals.get("t_flag")
             output.value += "Ready!\n";
             return pyodide;
         }
@@ -251,9 +251,7 @@ print(res)
             } catch (err) {
                 addToOutput(err);
             }
-            console.log(pyodide.globals.get("res"));
-            console.log(pyodide.globals.get("judge"))
-            addToOutput(pyodide.globals.get("res"));
+        
         }
     </script>
 </body>
