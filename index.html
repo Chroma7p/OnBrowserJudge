@@ -7,7 +7,7 @@
 
 <body>
     <textarea id="code" style="width: 100%;" rows="6"></textarea>
-    <button onclick="evaluatePython()">Run</button>
+    <button onclick="runPython()">Run</button>
     <br />
     <br />
     <div>Output:</div>
@@ -19,7 +19,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script>
-        const code_to_run = document.getElementById("code");
+
         function setup_pyodide() {
             // setup pyodide environment to run code blocks as needed
             var setup_code = `
@@ -46,7 +46,7 @@ def run_code(code):
 
         function runPython() {
             // run code currently stored in editor
-            pyodide.globals.code_to_run = editor.getValue()
+            pyodide.globals.code_to_run = document.getElementById("code")
             document.getElementById("output").value = pyodide.runPython('run_code(code_to_run)')
         }
 
