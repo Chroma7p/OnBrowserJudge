@@ -245,12 +245,13 @@ sys.stdin=io.StringIO(testcase)
 run_code(code_to_run)
 
 `).split("\n")  
-                console.log(result)
+                const answer=answers[i].split("\n")
+                //console.log(result)
                 let flag=true
                 for (const j in answers){
                     console.log(result[j])
-                    console.log(answers[i][j])
-                    if (result[j]!=answers[i][j]){
+                    console.log(answer[j])
+                    if (result[j]!=answer[j]){
                         flag=false
                         break
                     }
