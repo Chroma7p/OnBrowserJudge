@@ -19,7 +19,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script>
-
+        
         function setup_pyodide() {
             // setup pyodide environment to run code blocks as needed
             var setup_code = `
@@ -47,6 +47,7 @@ def run_code(code):
         function runPython() {
             // run code currently stored in editor
             pyodide.globals.code_to_run = document.getElementById("code")
+            console.log(pyodide.globals.code_to_run)
             document.getElementById("output").value = pyodide.runPython('run_code(code_to_run)')
         }
 
