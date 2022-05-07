@@ -237,7 +237,7 @@ def run_code(code):
             let judge=[]
             let AC=0
             for (const i in testcase){
-                console.log(answers[i])
+                //console.log(answers[i])
                 pyodide.globals.testcase=testcase[i]
                 const result=pyodide.runPython(`
 import io,sys
@@ -245,7 +245,7 @@ sys.stdin=io.StringIO(testcase)
 run_code(code_to_run)
 
 `).split("\n")  
-
+                console.log(result)
                 let flag=true
                 for (const j in answers){
                     console.log(result[j])
