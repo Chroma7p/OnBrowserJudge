@@ -220,6 +220,7 @@ def run_code(code):
             let judge=[]
             let AC=0
             for (const i in testcase){
+                console.log(answers[i])
                 pyodide.globals.testcase=testcase[i]
                 const result=pyodide.runPython(`
 import io,sys
