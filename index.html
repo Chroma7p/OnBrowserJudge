@@ -6,6 +6,7 @@
 </head>
 
 <body>
+    
     <textarea id="code" style="width: 100%;" rows="6"></textarea>
     <button onclick="runPython()">Run</button>
     <br />
@@ -101,7 +102,10 @@
                 max = Math.floor(max);
                 return Math.floor(Math.random() * (max - min) + min);
             }
-
+            function ACjudge(AC,all){
+                if(AC==all)return "AC"
+                else return "WA"
+            }
 
 
             function makecase(case_num = 10) {
@@ -249,8 +253,8 @@ run_code(code_to_run)
                 //console.log(result)
                 let flag=true
                 for (const j in answers){
-                    console.log(result[j])
-                    console.log(answer[j])
+                    //console.log(result[j])
+                    //console.log(answer[j])
                     if (result[j]!=answer[j]){
                         flag=false
                         break
@@ -262,7 +266,7 @@ run_code(code_to_run)
                 }
                 else judge.push("WA")
             }
-            document.getElementById("output").value=`${AC}/${testcase.length}`
+            document.getElementById("output").value=`${AC}/${testcase.length} ${ACjudge(AC,testcase.length)}`
             
 
 
