@@ -252,9 +252,9 @@ run_code(code_to_run)
                 const answer=answers[i].split("\n")
                 //console.log(result)
                 let flag=true
-                for (const j in answers){
-                    //console.log(result[j])
-                    //console.log(answer[j])
+                for (const j in answer){
+                    console.log(result[j])
+                    console.log(answer[j])
                     if (result[j]!=answer[j]){
                         flag=false
                         break
