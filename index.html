@@ -46,7 +46,7 @@ def run_code(code):
 
         function runPython() {
             // run code currently stored in editor
-            pyodide.globals.code_to_run = document.getElementById("code")
+            pyodide.globals.code_to_run = document.getElementById("code").value
             console.log(pyodide.globals.code_to_run)
             document.getElementById("output").value = pyodide.runPython('run_code(code_to_run)')
         }
