@@ -55,9 +55,12 @@
     </script>
     <script>
         // ace.editor()で、Editorオブジェクトを返す
-        let editor = ace.edit("editor")
-        // Editorオブジェクトにエディタのモードを割り当てる
-        editor.getSession().setMode("ace/mode/python")
+        let editor = ace.edit("editor", {
+                theme: "ace/theme/monokai",
+                mode: "ace/mode/python",
+                minLines: 2
+            });
+
         class Item {
                 constructor(name, value) {
                     this.name = name
