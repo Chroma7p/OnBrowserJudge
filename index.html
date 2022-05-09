@@ -3,7 +3,9 @@
 
 <head>
     <title>STP Judge</title>
+    <!-- ライブラリファイルを読み込み -->
     <script src="https://cdn.jsdelivr.net/pyodide/v0.20.0/full/pyodide.js"></script>
+    
 </head>
 
 <body>
@@ -34,10 +36,11 @@
     2:Charlie 3yen*3<br />
     total:14yen<br />
     <br /><br />
+    <!--エディタ埋め込み-->>
     <div id="editor">
     </div>
-    <!-- ライブラリファイルを読み込み -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
+    
     <button onclick="runPython()">Run</button>
     <br />
     <br />
@@ -50,12 +53,11 @@
         // set the pyodide files URL (packages.json, pyodide.asm.data etc)
         window.languagePluginUrl = 'https://cdn.jsdelivr.net/pyodide/v0.16.1/full/';
     </script>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script>
         // ace.editor()で、Editorオブジェクトを返す
         let editor = ace.edit("editor")
         // Editorオブジェクトにエディタのモードを割り当てる
-        editor.getSession().setMode("ace/mode/html")
+        editor.getSession().setMode("ace/mode/python")
         class Item {
                 constructor(name, value) {
                     this.name = name
