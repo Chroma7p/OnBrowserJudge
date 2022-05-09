@@ -5,7 +5,7 @@
     <title>STP Judge</title>
     <!-- ライブラリファイルを読み込み -->
     <script src="https://cdn.jsdelivr.net/pyodide/v0.20.0/full/pyodide.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
 </head>
 
 <body>
@@ -37,16 +37,15 @@
     total:14yen<br />
     <br /><br />
     
-    <div id="editor" style="min-height: 100px"></div>
+    <div id="editor" style="height: 600px"></div>
     <!--エディタ埋め込み-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
     <script>
-        // ace.editor()で、Editorオブジェクトを返す
-        let editor = ace.edit("editor", {
-            theme: "ace/theme/monokai",
-            mode: "ace/mode/python",
-            minLines: 2
-        });
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/monokai");
+        editor.setFontSize(14);
+        editor.getSession().setMode("ace/mode/python");
+        editor.getSession().setTabSize(4);
     </script>
     
     
