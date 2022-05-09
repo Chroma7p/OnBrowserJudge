@@ -34,7 +34,10 @@
     2:Charlie 3yen*3<br />
     total:14yen<br />
     <br /><br />
-    <textarea id="code" style="width: 100%;" rows="6"></textarea>
+    <div id="editor">
+    </div>
+    <!-- ライブラリファイルを読み込み -->
+    <script src="./ace.js"></script>
     <button onclick="runPython()">Run</button>
     <br />
     <br />
@@ -49,6 +52,10 @@
     </script>
     <script src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script>
+        // ace.editor()で、Editorオブジェクトを返す
+        let editor = ace.edit("editor")
+        // Editorオブジェクトにエディタのモードを割り当てる
+        editor.getSession().setMode("ace/mode/html")
         class Item {
                 constructor(name, value) {
                     this.name = name
@@ -263,7 +270,7 @@ def run_code(code):
 
         function runPython() {
             // run code currently stored in editor
-            pyodide.globals.code_to_run = document.getElementById("code").value
+            pyodide.globals.code_to_run = editor.getSession().getValue()
             //console.log(pyodide.globals.code_to_run)
             let judge=[]
             let AC=0
