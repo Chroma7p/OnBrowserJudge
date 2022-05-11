@@ -20,11 +20,11 @@ div.rule1{
 }
 
 div.rule2{
-  padding : 0px 20px  5px
+  padding : 0px 20px 10px
 }
 
 div.rule3{
-  padding: 0px 20px  5px
+  padding: 0px 20px  10px
 }
 
 /*
@@ -32,4 +32,5 @@ padding
 全辺
 上下 左右
 上   左右  下
+上   右    下   左
 */
