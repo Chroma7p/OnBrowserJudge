@@ -59,9 +59,11 @@
                 <h4>入力</h4>
                 <div class="rule3">
                     <code>add {name} {value}</code><br/>
+                    例:<code>add apple 300</code><br/>
                     のようにスペース区切りで渡される。nameは商品名、valueはその商品の価格になる。<br/>
                     入力された名前と価格をもとに新たな商品が登録される。<br/>
                     商品には登録された順に管理用の番号として0から始まるindex(IDのようなもの)があるものとする。<br/>
+                    例では300円のappleを新しく登録している。
                 </div>
                 <h4>出力</h4>
                 <div class="rule3">
@@ -75,8 +77,10 @@
                 <h4>入力</h4>
                 <div class="rule3">
                     <code>buy {index}</code><br/>
+                    例:<code>buy 0</code><br />
                     のようにスペース区切りで渡される。二つ目に購入する商品のindexが渡される。<br/>
                     入力されたindexの商品を一つ購入する。indexは0から始まることに注意する。<br/>
+                    例では0番目、つまり最初に登録された商品を一つ購入している。
                 </div>
                 <h4>出力</h4>
                 <div class="rule3">
@@ -95,6 +99,7 @@
                 <h4>出力</h4>
                 <div class="rule3">
                     <code>{index}:{name} {value}yen</code><br />
+
                     登録されている商品をindex順にindex、名前(name)、価格(value)を改行しながら出力する。<br/>   
                     例えば以下のような出力になる。<br />
                     <code>
