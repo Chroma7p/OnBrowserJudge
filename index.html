@@ -47,60 +47,73 @@
                 <h3>add(商品の登録)</h3>
                 <div class="rule2">
                     <h4>入力</h4>
-                    <code>add {name} {value}</code><br/>
-                    のようにスペース区切りで渡される。nameは商品名、valueはその商品の価格になる。<br/>
-                    商品には登録された順に管理用の番号として0から始まるindex(IDのようなもの)があるものとする。<br/>
+                    <div class="rule3">
+                        <code>add {name} {value}</code><br/>
+                        のようにスペース区切りで渡される。nameは商品名、valueはその商品の価格になる。<br/>
+                        商品には登録された順に管理用の番号として0から始まるindex(IDのようなもの)があるものとする。<br/>
+                    </div>
                     <h4>出力</h4>
-                    なし
+                    <div class="rule3">
+                        なし
+                    </div>
                 </div>
             </div>
             <div class="rule1">
                 <h3>buy(購入)</h3>
                 <div class="rule2">
                     <h4>入力</h4>
-                    <code>buy {index}</code><br/>
-                    のようにスペース区切りで渡される。二つ目に購入する商品のindexが渡される。<br/>
+                    <div class="rule3">
+                        <code>buy {index}</code><br/>
+                        のようにスペース区切りで渡される。二つ目に購入する商品のindexが渡される。<br/>
+                    </div>
                     <h4>出力</h4>
-                    なし<br/>
+                    <div class="rule3">
+                        なし
+                    </div>
                 </div>
             </div>
             <div class="rule1">
                 <h3>show(登録されている商品の一覧表示)</h3>
                 <div class="rule2">
                     <h4>入力</h4>
-                    <code>show</code><br />
-                    showの命令のみが与えられる。<br/>
+                    <div class="rule3">
+                        <code>show</code><br />
+                        showの命令のみが与えられる。<br/>
+                    </div>
                     <h4>出力</h4>
-                    <code>{index}:{name} {value}yen</code><br />
-                    登録されている商品をindex順にindex、名前(name)、価格(value)を改行しながら出力する。例えば以下のような出力になる。<br />
-<pre>
-<code>
+                    <div class="rule3">
+                        <code>{index}:{name} {value}yen</code><br />
+                        登録されている商品をindex順にindex、名前(name)、価格(value)を改行しながら出力する。例えば以下のような出力になる。<br />
+<pre><code>
 0:Alfa 1yen
 1:Bravo 2yen
 2:Charlie 3yen
-</code>
-</pre>
+</code></pre>
+                    </div>
                 </div>
             </div>
             <div class="rule1">
                 <h3>checkout(購入されている商品の一覧表示と会計)</h3>
                 <div class="rule2">
                     <h4>入力</h4>
-                    <code>checkout</code><br/>
-                    checkoutの命令のみが与えられる。<br/>
+                    <div class="rule3">
+                        <code>checkout</code><br/>
+                        checkoutの命令のみが与えられる。<br/>
+                    </div>
                     <h4>出力</h4>
-                    <code>{index}:{name} {value}yen*{count}</code><br/>
-                    <code>total:{total}</code><br/>
-                    登録されている商品をindex順にindex、名前(name)、価格(value)、購入数(count)を改行しながら出力する。<br/>
-                    登録されている商品と購入数を出力し終えたら最後に合計金額(total}を改行しながら出力する。例えば以下のような出力になる。<br/>
-<pre>
-<code>
+                    <div class="rule3">
+                        <code>{index}:{name} {value}yen*{count}</code><br/>
+                        <code>total:{total}</code><br/>
+                        登録されている商品をindex順にindex、名前(name)、価格(value)、購入数(count)を改行しながら出力する。<br/>
+                        登録されている商品と購入数を出力し終えたら最後に合計金額(total}を改行しながら出力する。例えば以下のような出力になる。<br/>
+                    
+<pre><code>
 0:Alfa 1yen*1
 1:Bravo 2yen*2
 2:Charlie 3yen*3
 total:14yen
-</code>
-</pre>
+</code></pre>
+                    </div>
                 </div>
             </div>
 
