@@ -40,7 +40,18 @@
     </nav>
     <div style="padding:70px">
         <h2>ルール</h2>
-        基本的なルールやヒントは<a href="https://github.com/MogamiTsuchikawa/ShoppingThemeProgram/blob/master/Python/%E5%95%8F%E9%A1%8C%E6%96%87.md">ここ</a>を参照<br/>
+        <div class="rule1">
+            <h3>注意事項</h3>
+            <div class ="rule2">
+                このページは<a href="">ShoppingThemeProgram</a>のPython向けのジャッジを行うものです。
+                基本的なルールやヒントは<a href="https://github.com/MogamiTsuchikawa/ShoppingThemeProgram/blob/master/Python/%E5%95%8F%E9%A1%8C%E6%96%87.md">ここ</a>を参照してください。<br />
+                ただし、ジャッジの都合上出力形式の指定があるため、以下の注意をよく読んでから提出してください。
+                また、入力時の<code>STP></code>は提出時には不要です。
+                
+
+            </div>
+        </div>
+        
         <div class="rule1">
             <h3>add(商品の登録)</h3>
             <div class="rule2">
@@ -48,6 +59,7 @@
                 <div class="rule3">
                     <code>add {name} {value}</code><br/>
                     のようにスペース区切りで渡される。nameは商品名、valueはその商品の価格になる。<br/>
+                    入力された名前と価格をもとに新たな商品が登録される。<br/>
                     商品には登録された順に管理用の番号として0から始まるindex(IDのようなもの)があるものとする。<br/>
                 </div>
                 <h4>出力</h4>
@@ -63,6 +75,7 @@
                 <div class="rule3">
                     <code>buy {index}</code><br/>
                     のようにスペース区切りで渡される。二つ目に購入する商品のindexが渡される。<br/>
+                    入力されたindexの商品を一つ購入する。indexは0から始まることに注意する。<br/>
                 </div>
                 <h4>出力</h4>
                 <div class="rule3">
@@ -81,7 +94,8 @@
                 <h4>出力</h4>
                 <div class="rule3">
                     <code>{index}:{name} {value}yen</code><br />
-                    登録されている商品をindex順にindex、名前(name)、価格(value)を改行しながら出力する。例えば以下のような出力になる。<br />
+                    登録されている商品をindex順にindex、名前(name)、価格(value)を改行しながら出力する。<br/>   
+                    例えば以下のような出力になる。<br />
 <pre><code>
 0:Alfa 1yen
 1:Bravo 2yen
@@ -114,8 +128,22 @@ total:14yen
                 </div>
             </div>
         </div>
-
-
+        <div class="rule1">
+            <h3>exit(プログラムの終了)</h3>
+            <div class="rule2">
+                <h4>入力</h4>
+                <div class="rule3">
+                    <code>exit</code><br />
+                    exitの命令のみが与えられる。<br/>
+                    これが与えられたときプログラムを終了しなければならない。<br/>
+                    ジャッジが終わらない場合うまくプログラムを終了出来ていないかのうせいがある。
+                </div>
+                <h4>出力</h4>
+                <div class="rule3">
+                    なし
+                </div>
+            </div>
+        </div>
         
 
         <h2>提出</h2>
