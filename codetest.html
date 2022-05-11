@@ -94,14 +94,14 @@ def run_code(code):
 
         function runPython() {
             pyodide.globals.code_to_run = editor.getSession().getValue()
-            const input=document.getElementById("input")
-            pyodide.globals.testcase=input
+            const input=document.getElementById("input").value
+            pyodide.globals.input=input
             const result=pyodide.runPython(`
 import io,sys
-sys.stdin=io.StringIO(testcase)
+sys.stdin=io.StringIO(input)
 run_code(code_to_run)
 
-`).split("\n")  
+`)
 
             document.getElementById("output").value=result
             
