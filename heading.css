@@ -14,16 +14,16 @@ code {
 }
 
 div.rule1{
-  padding : 5px 20px
+  padding : 5px 20px;
 
 }
 
 div.rule2{
-  padding : 0px 20px 10px
+  padding : 0px 20px 15px;
 }
 
 div.rule3{
-  padding: 0px 20px  10px
+  padding: 0px 20px  10px;
 }
 
 /*
