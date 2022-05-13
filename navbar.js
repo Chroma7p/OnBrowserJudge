@@ -14,8 +14,7 @@ navbar.render(
             </li>
             <li class="nav-item">
             <a href="https://github.com/Chroma7p/OnBrowserJudge" class="nav-link" target="blank">GitHub</a>
-        </li>
-            
+            </li>
         </ul >
     </nav >
 );
