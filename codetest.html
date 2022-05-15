@@ -54,7 +54,7 @@ def run_code(code):
             pyodide.runPython(setup_code)
         }
 
-        document.getElementById("run-button").onclick = function () {
+        function runPythonS () {
             pyodide.globals.code_to_run = editor.getSession().getValue()
             const input = document.getElementById("input").value
             pyodide.globals.input_string = input
