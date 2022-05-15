@@ -24,7 +24,7 @@ def run_code(code):
     pyodide.runPython(setup_code)
 }
 
-function runPython() {
+document.getElementById("run-button").onclick = function () {
     pyodide.globals.code_to_run = editor.getSession().getValue()
     const input=document.getElementById("input").value
     pyodide.globals.input_string=input

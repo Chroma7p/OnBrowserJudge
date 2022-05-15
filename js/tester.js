@@ -194,8 +194,8 @@ sys.stderr = olderr
 return out.getvalue()
 `
 pyodide.runPython(setup_code)
-    }
-function runPython() {
+}
+document.getElementById("submit-button").onclick = function () {
     // run code currently stored in editor
     pyodide.globals.code_to_run = editor.getSession().getValue()
         //console.log(pyodide.globals.code_to_run)
