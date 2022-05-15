@@ -1,3 +1,5 @@
+import pyodide from "https://cdn.jsdelivr.net/pyodide/v0.20.0/full/pyodide.js"
+
 function setup_pyodide() {
     // setup pyodide environment to run code blocks as needed
     var setup_code = `

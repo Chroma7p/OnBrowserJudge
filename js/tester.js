@@ -1,5 +1,5 @@
 //参考: https://github.com/pyodide/pyodide/issues/8
-
+import pyodide from "https://cdn.jsdelivr.net/pyodide/v0.20.0/full/pyodide.js"
 class Item {
     constructor(name, value) {
     this.name = name
