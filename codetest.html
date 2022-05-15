@@ -28,6 +28,53 @@
 <script src="./js/codetester.js"></script>
 <script src="./js/navbar.js" type="text/babel"></script>
 <link rel="stylesheet" href="heading.css">
+<script>
+    //参考: https://github.com/pyodide/pyodide/issues/8
+    function setup_pyodide() {
+            // setup pyodide environment to run code blocks as needed
+            var setup_code = `
+import sys, io, traceback
+namespace = {}  # use separate namespace to hide run_code, modules, etc.
+def run_code(code):
+  """run specified code and return stdout and stderr"""
+  out = io.StringIO()
+  oldout = sys.stdout
+  olderr = sys.stderr
+  sys.stdout = sys.stderr = out
+  try:
+      # change next line to exec(code, {}) if you want to clear vars each time
+      exec(code, namespace)
+  except:
+      traceback.print_exc()
+    
+  sys.stdout = oldout
+  sys.stderr = olderr
+  return out.getvalue()
+`
+            pyodide.runPython(setup_code)
+        }
+
+        document.getElementById("run-button").onclick = function () {
+            pyodide.globals.code_to_run = editor.getSession().getValue()
+            const input = document.getElementById("input").value
+            pyodide.globals.input_string = input
+            const result = pyodide.runPython(`
+import io,sys
+sys.stdin=io.StringIO(input_string)
+run_code(code_to_run)
+
+`)
+
+            document.getElementById("output").value = result
+
+
+
+        }
+
+        // run setup_pyodide() when pyodide finishes loading
+        languagePluginLoader.then(setup_pyodide)
+
+</script>
 <body>
     <div id="navbar"></div>
     
@@ -45,7 +92,7 @@
         </script>
         
 
-        <button id="run-button" type="button" class="btn btn-primary btn-lg" style="width:150px">実行</button>
+        <button  type="button" class="btn btn-primary btn-lg" style="width:150px" onclick="runPython()">実行</button>
         <h2>入力</h2>
         <textarea id="input" style="width: 600px" rows="6"></textarea>
         <h2>出力</h2>
