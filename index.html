@@ -149,21 +149,15 @@
         <h2>提出</h2>
         
         <div id="editorarea"></div>
+
         <button type="button" class="btn btn-primary btn-lg" style="width:150px" onclick="runPython()">提出</button>
 
         <h2>結果</h2>
         <textarea id="output" style="width: 600px" rows="6" disabled></textarea>
     </div>
+
     <!--参考:https://github.com/pyodide/pyodide/issues/8-->
-
-    <script type="text/javascript">
-        // set the pyodide files URL (packages.json, pyodide.asm.data etc)
-        window.languagePluginUrl = 'https://cdn.jsdelivr.net/pyodide/v0.16.1/full/';
-    </script>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script>
-        
-
         class Item {
                 constructor(name, value) {
                     this.name = name

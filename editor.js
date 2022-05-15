@@ -11,5 +11,6 @@ navbar.render(
         editor.getSession().setTabSize(4);
         editor.$blockScrolling = Infinity;
     </script>
+    <div>chk</div>
     </div>
 );
