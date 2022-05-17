@@ -100,6 +100,16 @@ run_code(code_to_run)
         languagePluginLoader.then(setup_pyodide)
 
     </script>
+    <script>
+        document.addEventListener('keydown', key_press_ivent);
+
+            function keydown_ivent(e) {
+                if (e.shiftKey === true && e.code=='enter') {
+                    runPython()
+                }
+                return false;
+            }
+    </script>
 </body>
 
 </html>
