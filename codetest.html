@@ -81,6 +81,7 @@ def run_code(code):
         }
 
         function runPython() {
+            console.log("running")
             pyodide.globals.code_to_run = editor.getSession().getValue()
             const input = document.getElementById("input").value
             pyodide.globals.input_string = input
@@ -101,15 +102,12 @@ run_code(code_to_run)
 
     </script>
     <script>
-        document.addEventListener('keydown', keydown_event);
-
-        function keydown_event(e) {
-            if (e.ctrlKey === true && e.code=='Enter') {
-                console.log("ctrl+enter!!")
+    document.body.addEventListener('keydown',
+        event => {
+            if (event.key === 'Enter' && event.ctrlKey) {
                 runPython()
             }
-            return false;
-        }
+        });
     </script>
 </body>
 
