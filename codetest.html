@@ -104,7 +104,8 @@ run_code(code_to_run)
         document.addEventListener('keydown', keydown_event);
 
         function keydown_event(e) {
-            if (e.shiftKey === true && e.code=='enter') {
+            if (e.ctrlKey === true && e.code=='Enter') {
+                console.log("ctrl+enter!!")
                 runPython()
             }
             return false;
