@@ -101,14 +101,14 @@ run_code(code_to_run)
 
     </script>
     <script>
-        document.addEventListener('keydown', key_press_ivent);
+        document.addEventListener('keydown', keydown_event);
 
-            function keydown_ivent(e) {
-                if (e.shiftKey === true && e.code=='enter') {
-                    runPython()
-                }
-                return false;
+        function keydown_event(e) {
+            if (e.shiftKey === true && e.code=='enter') {
+                runPython()
             }
+            return false;
+        }
     </script>
 </body>
 
